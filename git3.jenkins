@@ -17,6 +17,11 @@ pipeline {
                 sh "git add testfile"
                 sh "git commit -m 'Add testfile from Jenkins Pipeline'"
             }
+        }    
+        stage('git remote add') {
+            steps {
+                sh "git remotre add origin 'https://github.com/ssbostan/testrepo.git' "
+            }
         }
         stage("Push to Git Repository") {
             steps {
